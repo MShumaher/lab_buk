@@ -22,31 +22,45 @@ public class AccountSystem {
     }
 
     public SkiPass createHalfDayMorningSkiPass(){
-        return new HalfDayMorningSkiPass();
+        HalfDayMorningSkiPass skiPass = new HalfDayMorningSkiPass();
+        skiPassList.add(skiPass);
+        return skiPass;
     }
 
     public SkiPass createHalfDayAfternoonSkiPass(){
-        return new HalfDayAfternoonSkiPass();
+        HalfDayAfternoonSkiPass skiPass = new HalfDayAfternoonSkiPass();
+        skiPassList.add(skiPass);
+        return skiPass;
     }
 
     public SkiPass createDaySkiPass(int days){
-        return new DaySkiPass(days);
+        DaySkiPass skiPass = new DaySkiPass(days);
+        skiPassList.add(skiPass);
+        return skiPass;
     }
 
     public SkiPass createHolidayHalfDayMorningSkiPass(){
-        return new HolidayHalfDayMorningSkiPass();
+        HolidayHalfDayMorningSkiPass skiPass = new HolidayHalfDayMorningSkiPass();
+        skiPassList.add(skiPass);
+        return skiPass;
     }
 
     public SkiPass createHolidayHalfDayAfternoonSkiPass(){
-        return new HolidayHalfDayAfternoonSkiPass();
+        HolidayHalfDayAfternoonSkiPass skiPass = new HolidayHalfDayAfternoonSkiPass();
+        skiPassList.add(skiPass);
+        return skiPass;
     }
 
     public SkiPass createHolidayDaySkiPass(int days){
-        return new HolidayDaySkiPass(days);
+        HolidayDaySkiPass skiPass = new HolidayDaySkiPass(days);
+        skiPassList.add(skiPass);
+        return skiPass;
     }
 
     public SkiPass createSeasonSkiPass(){
-        return new SeasonSkiPass();
+        SeasonSkiPass skiPass = new SeasonSkiPass();
+        skiPassList.add(skiPass);
+        return skiPass;
     }
 
     public void blockSkiPass(SkiPass skiPass){
@@ -63,5 +77,9 @@ public class AccountSystem {
 
     public int getEndMonthOfSeason() {
         return endMonthOfSeason;
+    }
+
+    public List<SkiPass> getSkiPassList() {
+        return skiPassList;
     }
 }
