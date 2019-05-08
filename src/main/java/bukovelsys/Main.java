@@ -5,19 +5,23 @@ import bukovelsys.cards.SkiPassType;
 import bukovelsys.services.AccountSystem;
 import bukovelsys.services.Turmstile;
 
+import java.time.LocalDateTime;
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
 
         AccountSystem accountSystem = new AccountSystem();
 
-        SkiPass daySkiPass = accountSystem.createDaySkiPass(5);
-        SkiPass daySkiPass2 = accountSystem.createDaySkiPass(5);
+        SkiPass seasonSkiPass1 = accountSystem.createSeasonSkiPass(LocalDateTime.of(2019,8, 1,0,0));
+        SkiPass seasonSkiPass2 = accountSystem.createSeasonSkiPass(LocalDateTime.of(2018,8, 1,0,0));
 
-//        System.out.println(accountSystem.getSkiPassList().size());
-//
-//        System.out.println(daySkiPass.getId());
-//        System.out.println(daySkiPass2.getId());
         Turmstile turmstile = new Turmstile();
-        turmstile.getStat(SkiPassType.SEASON);
+
+        System.out.println(turmstile.validate(seasonSkiPass1));
+        System.out.println(turmstile.validate(seasonSkiPass2));
+
+
     }
+
 }

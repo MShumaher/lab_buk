@@ -1,13 +1,15 @@
 package bukovelsys.cards;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public abstract class SkiPass {
     protected int id;
     protected SkiPassType skiPassType;
     private boolean blocked;
-    private Date activationDate;
-    protected Date expirationDate;
+    private LocalDateTime activationDate;
+    protected LocalDateTime expirationDate;
 
     public int getId() {
         return id;
@@ -21,11 +23,15 @@ public abstract class SkiPass {
         return blocked;
     }
 
-    public Date getActivationDate() {
+    public LocalDateTime getActivationDate() {
         return activationDate;
     }
 
-    public Date getExpirationDate() {
+    public void setActivationDate(LocalDateTime activationDate) {
+        this.activationDate = activationDate;
+    }
+
+    public LocalDateTime getExpirationDate() {
         return expirationDate;
     }
 
@@ -33,7 +39,4 @@ public abstract class SkiPass {
         this.blocked = blocked;
     }
 
-    public void setActivationDate(Date activationDate) {
-        this.activationDate = activationDate;
-    }
 }
